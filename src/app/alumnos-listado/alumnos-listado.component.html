@@ -1,0 +1,16 @@
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>DNI</th>
+        <th>Horas Formacion</th>
+    </tr>
+    <tr *ngFor="let al of listadoAlumnos">
+        <td>{{al.id}}</td>
+        <td>{{al.nombre}}</td>
+        <td>{{al.dni}}</td>
+        <td>{{al.horasFormacion}}</td>
+    </tr>
+</table>
+
+<pre>{{alu | json}}</pre>

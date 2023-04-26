@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="alumnos" #alumnosForm="ngForm">
+    <input type="number" formControlName="id" name="" placeholder="ID"><br>
+    <input type="text" formControlName="nombre" name="" placeholder="Nombre"><br>
+    <input type="text" formControlName="dni" name="" placeholder="DNI"><br>
+    <input type="number" formControlName="horasFormacion" name="" placeholder="Horas Formacion"><br><br>
+    <button type="submit">Save</button>
+    <button type="reset">Cancelar</button>
+</form>
+
+<!-- <pre>{{listadoAlumnos | json}}</pre> -->
