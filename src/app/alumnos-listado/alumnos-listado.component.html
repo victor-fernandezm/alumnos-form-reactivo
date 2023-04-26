@@ -1,16 +1,19 @@
+<router-outlet></router-outlet>
 <table border="1">
     <tr>
         <th>ID</th>
         <th>Nombre</th>
         <th>DNI</th>
         <th>Horas Formacion</th>
+        <th>Operaciones</th>
     </tr>
     <tr *ngFor="let al of listadoAlumnos">
         <td>{{al.id}}</td>
         <td>{{al.nombre}}</td>
         <td>{{al.dni}}</td>
         <td>{{al.horasFormacion}}</td>
+        <td><button routerLink="form" [queryParams]="{id: al.id}">&#x270E;</button></td>
     </tr>
 </table>
 
-<pre>{{alu | json}}</pre>
+<!-- <pre>{{alu | json}}</pre> -->

@@ -18,9 +18,16 @@ export class AlumnosService {
       this._alumnos.push(alumno);
   }
 
-  public buscar(id: number): Observable<Alumno> {
-    return of(this._alumnos.find(v => v.id == id)!);
+  public buscar(id: number): Observable<Alumno> | undefined {
+    let al = this._alumnos.find(v => v.id == id);
+    if(al) return of(al);
+    else return undefined;
   }
+
+  // public buscar(id: number): Alumno | undefined {
+  //   return this._alumnos.find(v => v.id == id);
+  // }
+  
 
   public mostrar(): Observable<Alumno[]> {
     return of(this._alumnos);

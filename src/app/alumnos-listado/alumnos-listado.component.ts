@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AlumnosService } from '../alumnos.service';
 import { Alumno } from '../model/alumno';
+import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alumnos-listado',
@@ -10,15 +12,12 @@ import { Alumno } from '../model/alumno';
 export class AlumnosListadoComponent {
 
   listadoAlumnos: Alumno[] = [];
-  alu: Alumno = {};
+  alumno: Alumno = {};
   
-  constructor(private alumnosService: AlumnosService) {
+  constructor(private router: Router, private alumnosService: AlumnosService) {
     this.alumnosService.mostrar().subscribe(als => {
       this.listadoAlumnos = als;
     });
+    router.navigate(["form"]);
   }
-  busc() {
-    this.alumnosService.buscar(0).subscribe(al => {
-      this.alu = al || {};
-    });}
 }
